@@ -5,7 +5,7 @@ public class Patient {
 	
 	public void speak()
 	{
-		System.out.println("Help me");
+		System.out.println("Help me. I am a patient");
 	}
 	
 }
