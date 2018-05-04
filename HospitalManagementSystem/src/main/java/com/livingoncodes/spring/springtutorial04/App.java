@@ -15,15 +15,8 @@ public class App
     	ApplicationContext context = new ClassPathXmlApplicationContext("com/livingoncodes/spring/springtutorial04/beans/beans.xml");
     	
     	
-    	Patient patient = (Patient) context.getBean("patient");
-    	
-    	
-    	Address address2 = (Address) context.getBean("address2");
-    	
-    	
-    	System.out.println(patient);
-    	
-    	System.out.println(address2);
+    	ContactBook contacts = (ContactBook) context.getBean("contactbook");
+    	System.out.println(contacts);
     	
     	((ClassPathXmlApplicationContext)  context ).close();
     }

@@ -1,54 +1,31 @@
 package com.livingoncodes.spring.springtutorial04;
 
+import java.util.List;
+
 public class Patient {
 
 	private int id;
 	private String name;
 
-	private int nationalId;
-	private Address address;
+	private EmergencyContact criticalContact;
+
+	private List<EmergencyContact> emergencyContacts;
 
 	public Patient() {
 
-	}
-	
-	public static Patient getInstance(int id, String name)
-	{
-		System.out.println("Creating Patient using factory method");
-		return new Patient(id, name);
 	}
 
 	public Patient(int id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-	
-	public void onCreate()
-	{
-		System.out.println( "Patient created " + this );
-	}
-	
-	
-	public void onDestroy()
-	{
-		System.out.println("Patient destroyed " + this);
-	}
-	
 
-	public Address getAddress() {
-		return address;
+	public EmergencyContact getCriticalContact() {
+		return criticalContact;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	public int getNationalId() {
-		return nationalId;
-	}
-
-	public void setNationalId(int nationalId) {
-		this.nationalId = nationalId;
+	public void setCriticalContact(EmergencyContact criticalContact) {
+		this.criticalContact = criticalContact;
 	}
 
 	public int getId() {
@@ -67,9 +44,17 @@ public class Patient {
 		this.name = name;
 	}
 
+	public List<EmergencyContact> getEmergencyContacts() {
+		return emergencyContacts;
+	}
+
+	public void setEmergencyContacts(List<EmergencyContact> emergencyContacts) {
+		this.emergencyContacts = emergencyContacts;
+	}
+
 	@Override
 	public String toString() {
-		return "Patient [id=" + id + ", name=" + name + ", nationalId=" + nationalId + ", address=" + address + "]";
+		return "Patient [id=" + id + ", name=" + name + ", criticalContact=" + criticalContact + "]";
 	}
 
 	public void speak() {
